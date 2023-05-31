@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DRESS-Up Game</title>
+    <link rel="stylesheet" href="second.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button id="resetBtn" onClick="reset('images/trn.png')"><img src="images/reseticon.png" id="resetImage"></button>
+    <button id="randomBtn" onClick="generateRandomGirl()"><img src="images/randomicon.png" id="randomImage"></button>
+    <div class="container-div">
+        <div class="girl-div">
+            <div class="skinOptions">
+                <button class="skinButtons" id="pale" onClick="changeSkin('images/pale.PNG')"></button>
+                <button class="skinButtons" id="fair" onClick="changeSkin('images/fair.PNG')"></button>
+                <button class="skinButtons" id="light" onClick="changeSkin('images/light.PNG')"></button>
+                <button class="skinButtons" id="medium" onClick="changeSkin('images/medium.PNG')"></button>
+                <button class="skinButtons" id="deep1" onClick="changeSkin('images/deep1.PNG')"></button>
+                <button class="skinButtons" id="deep2" onClick="changeSkin('images/deep2.PNG')"></button>
+            </div>
+            <div class="body-div">
+                <img id="girlBody" src="images/pale.PNG">
+                <div class="hair-div">
+                    <img class="defaults" id="hairDefault" src="images/trn.png">
+                    <div class="eye-div"><img class="defaults" id="eyeDefault" src="images/trn.png"></div>
+                </div>
+                <div class="dress-div"><img class="defaults" id="dressDefault" src="images/trn.png"></div>
+                <!-- <div class="dress-div1"><img id="dressDefault" src="trn.png"></div> -->
+                <div class="shoes-div"><img class="defaults" id="shoeDefault" src="images/trn.png"></div>
+            </div>
+        </div>
+        <div class="inventory-div">
+            <div class="selection-divs">
+                <button class="pre-btn" id="arrowBtns"><img src="images/arrowleft.png" alt=""></button>
+                <button class="nxt-btn" id="arrowBtns"><img src="images/arrowright.png" alt=""></button>
+                <div class="product-container">
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeEyeColor('images/brown_eyes.PNG')">
+                            <img src="images/brown_eyes.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeEyeColor('images/amber_eyes.PNG')">
+                            <img src="images/amber_eyes.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeEyeColor('images/green_eyes.PNG')">
+                            <img src="images/green_eyes.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeEyeColor('images/blue_eyes.PNG')">
+                            <img src="images/blue_eyes.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeEyeColor('images/gray_eyes.PNG')">
+                            <img src="images/gray_eyes.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="selection-divs">
+                <button class="pre-btn" id="arrowBtns"><img src="images/arrowleft.png"></button>
+                <button class="nxt-btn" id="arrowBtns"><img src="images/arrowright.png"></button>
+                <div class="product-container">
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair1black.PNG')">
+                            <img src="images/hair1black.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair2black.PNG')">
+                            <img src="images/hair2black.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair3black.PNG')">
+                            <img src="images/hair3black.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair4black.PNG')">
+                            <img src="images/hair4black.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair5black.PNG')">
+                            <img src="images/hair5black.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair1brown.PNG')">
+                            <img src="images/hair1brown.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair2brown.PNG')">
+                            <img src="images/hair2brown.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair3brown.PNG')">
+                            <img src="images/hair3brown.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair4brown.PNG')">
+                            <img src="images/hair4brown.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair5brown.PNG')">
+                            <img src="images/hair5brown.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair1ginger.PNG')">
+                            <img src="images/hair1ginger.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair2ginger.PNG')">
+                            <img src="images/hair2ginger.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair3ginger.PNG')">
+                            <img src="images/hair3ginger.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair4ginger.PNG')">
+                            <img src="images/hair4ginger.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair5ginger.PNG')">
+                            <img src="images/hair5ginger.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair1blonde.PNG')">
+                            <img src="images/hair1blonde.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair2blonde.PNG')">
+                            <img src="images/hair2blonde.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair3blonde.PNG')">
+                            <img src="images/hair3blonde.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair4blonde.PNG')">
+                            <img src="images/hair4blonde.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeHair('images/hair5blonde.PNG')">
+                            <img src="images/hair5blonde.PNG" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="selection-divs">
+                <button class="pre-btn" id="arrowBtns"><img src="images/arrowleft.png" alt=""></button>
+                <button class="nxt-btn" id="arrowBtns"><img src="images/arrowright.png" alt=""></button>
+                <div class="product-container">
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress1pink.PNG')">
+                            <img src="images/dress1pinkV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress2pink.PNG')">
+                            <img src="images/dress2pinkV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress3pink.PNG')">
+                            <img src="images/dress3pinkV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress4pink.PNG')">
+                            <img src="images/dress4pink.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress5pink.PNG')">
+                            <img src="images/dress5pinkV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress1red.PNG')">
+                            <img src="images/dress1redV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress2red.PNG')">
+                            <img src="images/dress2redV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress3red.PNG')">
+                            <img src="images/dress3redV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress4red.PNG')">
+                            <img src="images/dress4red.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress5red.PNG')">
+                            <img src="images/dress5redV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress1white.PNG')">
+                            <img src="images/dress1whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress2white.PNG')">
+                            <img src="images/dress2whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress3white.PNG')">
+                            <img src="images/dress3whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress4white.PNG')">
+                            <img src="images/dress4white.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress5white.PNG')">
+                            <img src="images/dress5whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress1blue.PNG')">
+                            <img src="images/dress1blueV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress2blue.PNG')">
+                            <img src="images/dress2blueV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress3blue.PNG')">
+                            <img src="images/dress3blueV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress4blue.PNG')">
+                            <img src="images/dress4blue.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress5blue.PNG')">
+                            <img src="images/dress5blueV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress1black.PNG')">
+                            <img src="images/dress1blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress2black.PNG')">
+                            <img src="images/dress2blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress3black.PNG')">
+                            <img src="images/dress3blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress4black.PNG')">
+                            <img src="images/dress4black.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeDress('images/dress5black.PNG')">
+                            <img src="images/dress5blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="selection-divs">
+                <button class="pre-btn" id="arrowBtns"><img src="images/arrowleft.png" alt=""></button>
+                <button class="nxt-btn" id="arrowBtns"><img src="images/arrowright.png" alt=""></button>
+                <div class="product-container">
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe1beige.PNG')">
+                            <img src="images/shoe1beigeV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe2beige.PNG')">
+                            <img src="images/shoe2beigeV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe3beige.PNG')">
+                            <img src="images/shoe3beigeV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe4beige.PNG')">
+                            <img src="images/shoe4beigeV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe5beige.PNG')">
+                            <img src="images/shoe5beige.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe1black.PNG')">
+                            <img src="images/shoe1blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe2black.PNG')">
+                            <img src="images/shoe2blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe3black.PNG')">
+                            <img src="images/shoe3blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe4black.PNG')">
+                            <img src="images/shoe4blackV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe5black.PNG')">
+                            <img src="images/shoe5black.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe1white.PNG')">
+                            <img src="images/shoe1whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe2white.PNG')">
+                            <img src="images/shoe2whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe3white.PNG')">
+                            <img src="images/shoe3whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe4white.PNG')">
+                            <img src="images/shoe4whiteV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe5white.PNG')">
+                            <img src="images/shoe5white.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe1brown.PNG')">
+                            <img src="images/shoe1brownV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe2brown.PNG')">
+                            <img src="images/shoe2brownV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe3brown.PNG')">
+                            <img src="images/shoe3brownV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe4brown.PNG')">
+                            <img src="images/shoe4brownV2.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                    <div class="product-card">
+                        <button class="product-image" onClick="changeShoe('images/shoe5brown.PNG')">
+                            <img src="images/shoe5brown.png" class="product-thumb" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="second.js"></script>
+</body>
+</html>
